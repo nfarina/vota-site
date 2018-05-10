@@ -1,0 +1,182 @@
+.home {
+
+  .grid_row {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    width: 100%;
+    @include bp(mama-bear) {
+      grid-template-columns: 6fr 4fr;
+    }
+    @include bp(baby-bear) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .use_your_words {
+    margin: 6.25rem auto;
+    padding: 0 3.75rem;
+    @include bp(mama-bear) {
+      padding: 0 1rem 0 0;
+    }
+    @include bp(baby-bear) {
+      margin: 3.125rem auto;
+      padding: 0;
+    }
+  }
+
+  .illus_hero {
+    margin: auto;
+    @include bp(mama-bear) {
+      padding: 0 0 0 1rem;
+    }
+    @include bp(baby-bear) {
+      padding: 0;
+    }
+  }
+
+  .pill {
+    background-color: $color12;
+    border-radius: 15px;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+    padding: 9px 15px 7px;
+  }
+
+  h1 {
+    margin-bottom: 1.25rem;
+  }
+
+  p.tag {
+    margin-bottom: 2.5rem;
+  }
+
+  p.get_it {
+    margin-bottom: 1.25rem;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 100%;
+    @include bp(baby-bear) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .input_wrapper {
+    height: 50px;
+    position: relative;
+    @include bp(baby-bear) {
+      margin-bottom: 20px;
+    }
+
+    input {
+      background: #fff;
+      border: none;
+      border-radius: 6px 0 0 6px;
+      box-shadow: 0 0 0 1px $color15 inset;
+      box-sizing: border-box;
+      color: $color12;
+      display: block;
+      font-family: $font1;
+      font-size: 16px;
+      font-weight: normal;
+      height: 100%;
+      padding: 5px 10px;
+      position: absolute;
+      transition: opacity 200ms, transform 200ms;
+      width: 100%;
+      -webkit-appearance: none;
+      @include bp(baby-bear) {
+        border-radius: 6px;
+      }
+
+      &:focus, &.filled {
+        outline: none;
+        padding-top: 18px;
+
+        + .input_label {
+          color: $color12;
+          cursor: default;
+          font-size: 12px;
+          font-weight: bold;
+          padding: 0;
+          pointer-events: none;
+          transform: translate3d(10px, 10px, 0);
+        }
+
+      }
+
+      &.error {
+        box-shadow: 0 0 0 1px $color6 inset;
+        color: $color6;
+
+        + .input_label {
+          color: $color6;
+
+        }
+
+        &:focus, &.filled {
+
+          + .input_label {
+            color: $color6;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .input_label {
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    color: $color12;
+    cursor: text;
+    display: inline-block;
+    font-size: 16px;
+    position: absolute;
+    padding: 18px 20px 0;
+    text-align: left;
+    transition: all 200ms;
+    transform-origin: 0% 50%;
+    width: 100%;
+  }
+
+  input[type="submit"] {
+    background: $grad1;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    color: #fff;
+    font-family: $font1;
+    font-size: 16px;
+    font-weight: bold;
+    height: 50px;
+    padding-top: 4px;
+    outline: none;
+    transition: all 200ms ease;
+    @include bp(baby-bear) {
+      border-radius: 6px;
+    }
+
+    &:hover, &:focus {
+        background: $grad1_rev;
+        box-shadow: 0 3px 12px rgba($color1, 0.4);
+    }
+
+    &:active {
+      box-shadow: 0 5px 15px rgba($color1, 0.4);
+    }
+
+  }
+
+
+}

@@ -15,5 +15,6 @@ $color15: #E1E6E5; //Med-light Gray
 $color16: #F7FAFA; //Light Gray
 
 $grad1: linear-gradient(90deg, adjust-hue($color1, -10) 0%, adjust-hue($color1, 10) 100%);
+$grad1_rev: linear-gradient(-90deg, adjust-hue($color1, -10) 0%, adjust-hue($color1, 10) 100%);
 $grad2: linear-gradient(90deg, adjust-hue($color7, -5) 0%, adjust-hue($color7, 5) 100%);
 $grad3: linear-gradient(90deg, adjust-hue($color3, -3) 0%, adjust-hue($color3, 3) 100%);

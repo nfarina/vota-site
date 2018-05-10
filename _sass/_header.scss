@@ -1,13 +1,16 @@
 header {
-  position: sticky;
   background-color: #fff;
   box-shadow: 0 1px 1px rgba(0,0,0,0.10);
+  margin-bottom: 3.75rem;
+  position: fixed;
   top: 0;
+  width: 100%;
+  z-index: 1000;
 
   nav {
+    align-items: center;
     display: flex;
     height: 3.75rem;
-    align-items: center;
 
     a {
       margin: 0 0 0 2.5rem;

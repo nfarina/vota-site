@@ -8,16 +8,30 @@ h1, h2, h3, h4, h5, p, a {
 
 }
 
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  @include bp(mama-bear) {
+    font-size: 2rem;
+  }
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.4;
+
+  a {
+    font-size: 20px;
+  }
+
+}
+
 a {
   color: $color12;
+  font-size: 16px;
   font-weight: bold;
   text-decoration: none;
-  @include bp(mama-bear) {
-    font-size: 1.14285714rem;
-  }
-  @include bp(baby-bear) {
-    font-size: 1.33333333rem;
-  }
 }
 
 a:hover, a:hover:before, a:hover:after, a:active, a:active:before, a:active:after {
