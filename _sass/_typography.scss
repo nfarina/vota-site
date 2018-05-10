@@ -1,0 +1,29 @@
+/* Typography */
+
+h1, h2, h3, h4, h5, p, a {
+
+  &.white {
+    color: #fff;
+  }
+
+}
+
+a {
+  color: $color12;
+  font-weight: bold;
+  text-decoration: none;
+  @include bp(mama-bear) {
+    font-size: 1.14285714rem;
+  }
+  @include bp(baby-bear) {
+    font-size: 1.33333333rem;
+  }
+}
+
+a:hover, a:hover:before, a:hover:after, a:active, a:active:before, a:active:after {
+  opacity: 0.50;
+}
+
+a, a:before, a:after {
+  transition: opacity 200ms ease;
+}

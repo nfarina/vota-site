@@ -1,0 +1,19 @@
+$color1: #32BBAB; //Turquoise
+$color2: #90D98B; //Lime
+$color3: #E0B475; //Gold
+$color4: #FCF8EE; //Cream
+$color5: #F09CAB; //Pink
+$color6: #F2584D; //Red
+$color7: #2B7DA5; //Navy
+$color8: #7CB8D6; //Storm
+$color9: #8ED2F4; //Baby
+$color10: #D0E9F5; //Sky
+$color12: #1A4A44; //Forest
+$color13: #919998; //Dark Gray
+$color14: #B5BFBE; //Dark-med Gray
+$color15: #E1E6E5; //Med-light Gray
+$color16: #F7FAFA; //Light Gray
+
+$grad1: linear-gradient(90deg, adjust-hue($color1, -10) 0%, adjust-hue($color1, 10) 100%);
+$grad2: linear-gradient(90deg, adjust-hue($color7, -5) 0%, adjust-hue($color7, 5) 100%);
+$grad3: linear-gradient(90deg, adjust-hue($color3, -3) 0%, adjust-hue($color3, 3) 100%);

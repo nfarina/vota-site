@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+  {% if page.id %}
+  <title>Vota - {{ page.title }}</title>
+  {% else %}
+  <title>Vota - Record & share the places you go</title>
+  {% endif %}
+  <meta name="author" content="Vota">
+  <meta name="description" content="Vota - Record & share the places you go">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vota - Record & share the places you go" />
+  <meta property="og:image" content="https://vota.app/images/og_product.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="" />
+  <meta name="twitter:title" content="Vota - Record & share the places you go" />
+  <meta name="twitter:description" content="Stay in touch with the people who matter" />
+  <meta name="twitter:image" content="https://vota.app/images/og_product.jpg" />
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" href="/css/main.css?v1.0" />
+</head>
+
+<body>
+  {% include header.html %}
+  {{ content }}
+</body>
+</html>
