@@ -11,7 +11,7 @@ layout: layout
         <h1>Record places you go. And share recommendations with close friends.</h1>
         <p class="tag">Vota keeps you in touch with the people who matter.</p>
         <p class="get_it">Get Vota for iPhone & Android:</p>
-        <form method="post" id="signup_form" target="_blank" action="">
+        <form onsubmit="sendSMS(this); return false;">
           <span class="input_wrapper">
             <input type="tel" id="phone" name="phone" tabindex=1>
             <label class="input_label" for="phone">
