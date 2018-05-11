@@ -17,9 +17,20 @@ h1 {
   }
 }
 
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
 p {
   font-size: 1.25rem;
   line-height: 1.4;
+
+  &.small {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 
   a {
     font-size: 20px;
@@ -34,10 +45,10 @@ a {
   text-decoration: none;
 }
 
-a:hover, a:hover:before, a:hover:after, a:active, a:active:before, a:active:after {
+a:hover, a:hover:before, a:hover:after, a:active, a:active:before, a:active:after, a:focus, a:focus:before, a:focus:after {
   opacity: 0.50;
 }
 
-a, a:before, a:after {
+a, a:before, a:after, a:focus {
   transition: opacity 200ms ease;
 }
