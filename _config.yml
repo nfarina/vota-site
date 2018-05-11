@@ -8,4 +8,4 @@ sass:
     style: compressed
 
 plugins:
-  - jekyll-autoprefixer
+  - octopress-autoprefixer

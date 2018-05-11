@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
-gem "jekyll-autoprefixer"
+gem "octopress-autoprefixer"
 gem "github-pages", group: :jekyll_plugins
