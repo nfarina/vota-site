@@ -1,0 +1,45 @@
+.legal {
+  padding-bottom: 3.75rem;
+
+  .legal_copy {
+    margin: 6.25rem auto;
+    width: 66.66667%;
+    @include bp(mama-bear) {
+      width: 83.333333%
+    }
+    @include bp(baby-bear) {
+      width: 100%;
+    }
+
+    h1, h2, h3, h4, p, ul, li {
+      margin-bottom: 1.25rem;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    li {
+      font-size: 18px;
+      line-height: 1.66666667;
+      font-weight: bold;
+      list-style: none;
+    }
+
+    > ul > li, > ol > li, > ol > ol > ol > li {
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: normal;
+      list-style: disc inside none;
+    }
+
+    > ol > ol > li {
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: normal;
+      list-style: circle inside none;
+    }
+
+  }
+
+}

@@ -23,6 +23,16 @@ h3 {
   line-height: 1.4;
 }
 
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  @include bp(baby-bear) {
+    font-size: 14px;
+    line-height: 1.57142857;
+  }
+}
+
 p {
   font-size: 20px;
   line-height: 1.7;
@@ -55,4 +65,21 @@ a:hover, a:hover:before, a:hover:after, a:active, a:active:before, a:active:afte
 
 a, a:before, a:after, a:focus {
   transition: opacity 200ms ease;
+}
+
+ul.list, ol.list, .legal ul, .legal ol {
+  font-size: 16px;
+  line-height: 1.5;
+  list-style: disc inside none;
+
+  li {
+    margin-bottom: 1.25rem;
+    margin-left: 1px;
+  }
+
+  ul, ol {
+    list-style: circle inside none;
+    margin: 1.25rem 0 0 1.25rem;
+  }
+
 }

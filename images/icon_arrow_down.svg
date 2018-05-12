@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_arrow_down</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_arrow_down">
+            <rect id="bound" x="0" y="0" width="24" height="24"></rect>
+            <path d="M11.5823591,15.223 C11.9283591,15.651 12.4943591,15.651 12.8403591,15.223 L17.2423591,9.778 C17.5883591,9.35 17.4213591,9 16.8713591,9 L7.55135906,9 C7.00135906,9 6.83435906,9.35 7.18035906,9.778 L11.5823591,15.223 Z" id="Fill-1" fill="#B5BFBE"></path>
+        </g>
+    </g>
+</svg>

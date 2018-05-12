@@ -17,6 +17,7 @@
     }
 
     a {
+      font-weight: normal;
       @include bp(baby-bear) {
         border-bottom: 1px solid $color15;
       }
