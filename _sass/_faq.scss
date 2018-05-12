@@ -23,6 +23,15 @@
     position: relative;
     overflow: hidden;
     width: 100%;
+
+    &:first-child {
+
+      label {
+        border-top: 1px solid $color15;
+      }
+
+    }
+
   }
 
   input {
@@ -38,14 +47,14 @@
     font-size: 20px;
     font-weight: bold;
     line-height: 1.7;
-    padding: 0.8125rem 44px 0.8125rem 0;
+    padding: 13px 44px 13px 0;
     position: relative;
     @include bp(mama-bear) {
       font-size: 16px;
       line-height: 1.5;
     }
     @include bp(baby-bear) {
-      padding-right: 34px;
+      padding: 20px 34px 20px 0;
     }
   }
 

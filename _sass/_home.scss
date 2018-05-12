@@ -65,7 +65,7 @@
       p {
         display: block;
       }
-      
+
     }
 
     form {
@@ -187,11 +187,13 @@
       font-size: 16px;
       font-weight: bold;
       height: 50px;
+      margin-left: -2px;
       padding-top: 4px;
       outline: none;
       transition: all 200ms ease;
       @include bp(mama-bear) {
         border-radius: 6px;
+        margin-left: 0;
       }
 
       &:hover, &:focus {
