@@ -24,8 +24,12 @@ h3 {
 }
 
 p {
-  font-size: 1.25rem;
+  font-size: 20px;
   line-height: 1.7;
+  @include bp(mama-bear) {
+    font-size: 18px;
+    line-height: 1.66666667;
+  }
 
   &.small {
     font-size: 16px;

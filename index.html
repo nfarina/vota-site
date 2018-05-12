@@ -10,16 +10,22 @@ layout: layout
         <div class="pill">Vota is in beta!</div>
         <h1>Record places you go. And share recommendations with close friends.</h1>
         <p class="tag">Vota keeps you in touch with the people who matter.</p>
-        <p class="get_it">Get Vota for iPhone & Android:</p>
-        <form onsubmit="sendSMS(this); return false;">
-          <span class="input_wrapper">
-            <input type="tel" id="phone" name="phone" tabindex=1>
-            <label class="input_label" for="phone">
-              <span>Phone Number</span>
-            </label>
-          </span>
-          <input type="submit" class="button" value="Text me the link" tabindex=2>
-        </form>
+        <div class="form_wrapper">
+          <p class="get_it">Get Vota for iPhone & Android:</p>
+          <form onsubmit="sendSMS(this); return false;">
+            <span class="input_wrapper">
+              <input type="tel" id="phone" name="phone" tabindex=1>
+              <label class="input_label" for="phone">
+                <span>Phone Number</span>
+              </label>
+            </span>
+            <input type="submit" class="button" value="Text me the link" tabindex=2>
+          </form>
+        </div>
+        <div class="stores">
+          <a href="https://itunes.apple.com/us/app/enlight-app/id1216484571?ls=1&mt=8"><img src="/images/app_store_badge.svg" alt="" /></a>
+          <a href="https://play.google.com/store/apps/details?id=com.enlighthq.mobile"><img src="/images/google_play_badge.svg" alt="" /></a>
+        </div>
       </div>
     </div>
     <div class="col">
