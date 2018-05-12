@@ -1,0 +1,65 @@
+.footer_inline {
+  display: block;
+  margin: 0 auto 6.25rem;
+  text-align: center;
+  width: 100%;
+
+  nav {
+    margin: 0 auto 2.5rem;
+    width: 50%;
+
+    a, p {
+      display: inline-block;
+      @include bp(baby-bear) {
+        display: block;
+        padding: 1.25rem 0;
+      }
+    }
+
+    a {
+      @include bp(baby-bear) {
+        border-bottom: 1px solid $color15;
+      }
+    }
+
+    p {
+      color: $color13;
+    }
+
+    span {
+      display: inline-block;
+      @include bp(baby-bear) {
+        display: none;
+      }
+    }
+
+  }
+
+  .stores {
+    display: grid;
+    grid-gap: 0.625rem;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    @include bp(baby-bear) {
+      grid-template-columns: 1fr;
+    }
+
+    a:first-child {
+      justify-self: end;
+      @include bp(mama-bear) {
+        justify-self: center;
+        margin-bottom: 1.25rem;
+      }
+    }
+
+    a:last-child {
+      justify-self: start;
+      @include bp(mama-bear) {
+        justify-self: center;
+        margin-bottom: 1.25rem;
+      }
+    }
+
+  }
+
+}

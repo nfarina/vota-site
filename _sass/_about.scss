@@ -1,0 +1,25 @@
+.about {
+
+  p.overview, p.founders {
+    display: block;
+    margin: 6.25rem auto;
+    width: 50%;
+    @include bp(baby-bear) {
+      width: 100%;
+    }
+  }
+
+  .illus {
+    margin: 0 auto;
+    max-width: 533px;
+    position: relative;
+    text-align: center;
+
+    .illus_city_pin {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+}
