@@ -8,6 +8,7 @@
       width: 83.333333%
     }
     @include bp(baby-bear) {
+      margin: 3.33333333rem auto;
       width: 100%;
     }
 
@@ -98,8 +99,17 @@
       width: 83.333333%
     }
     @include bp(baby-bear) {
+      margin: 0 auto 3.33333333rem;
       width: 100%;
     }
+
+    p, a {
+      @include bp(baby-bear) {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+
   }
 
 }

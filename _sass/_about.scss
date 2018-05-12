@@ -9,6 +9,7 @@
       width: 75%;
     }
     @include bp(baby-bear) {
+      margin: 3.33333333rem auto;
       width: 100%;
     }
   }

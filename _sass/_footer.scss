@@ -1,8 +1,11 @@
 .footer_inline {
   display: block;
-  margin: 0 auto 6.25rem;
+  margin: 0 auto 2.5rem;
   text-align: center;
   width: 100%;
+  @include bp(baby-bear) {
+    margin: 0 auto;
+  }
 
   nav {
     margin: 0 auto 2.5rem;
