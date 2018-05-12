@@ -46,7 +46,7 @@
 
     a:first-child {
       justify-self: end;
-      @include bp(mama-bear) {
+      @include bp(baby-bear) {
         justify-self: center;
         margin-bottom: 1.25rem;
       }
@@ -54,9 +54,8 @@
 
     a:last-child {
       justify-self: start;
-      @include bp(mama-bear) {
+      @include bp(baby-bear) {
         justify-self: center;
-        margin-bottom: 1.25rem;
       }
     }
 
