@@ -68,6 +68,7 @@ html {
 html, body {
   color: $color12;
   font-family: $font1;
+  font-feature-settings: "liga" off;
   height: 100%;
   @include bp(baby-bear) {
       -webkit-text-size-adjust: none;
