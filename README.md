@@ -11,3 +11,4 @@
 ### With jekyll serve running, open a new command-line tab and run:
 
 `browser-sync start --proxy "localhost:4000" --files "_site/*.*"`
+
