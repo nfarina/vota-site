@@ -2,16 +2,27 @@
 layout: layout
 ---
 
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const myParam = urlParams.get('version');
+</script>
+
 <div class="home content">
 
   <section class="hero row">
     <div class="col">
       <div class="use_your_words">
         <div class="pill">Vota is in beta!</div>
-        <h1>Get to know your spending, catch fraud in seconds.</h1>
-        <p class="tag">Vota has your back.</p>
+
+        
+        <h1>The End of Expense Reports.</h1>
+        <p class="tag">A credit card that fills all the blanks and alerts all parties in real time.</p> 
+        <p class="tag">With Vota, you will NEVER create or approve another expense report.</p>
+
+
+
         <div class="form_wrapper">
-          <p class="get_it">Get Vota for iPhone & Android:</p>
+          <p class="get_it">Get Vota in Minutes on iPhone & Android:</p>
           <form onsubmit="sendSMS(this); return false;">
             <span class="input_wrapper">
               <input type="tel" id="phone" name="phone" tabindex=1>
@@ -42,58 +53,111 @@ layout: layout
       </div>
     </div>
     <div class="description col">
-      <h3>Spot Fraud, and Budget</h3>
-      <p class="small">Notice unfamiliar charges within seconds and keep on top of your budget.</p>
+      <h3>We make it easy</h3>
+      <p class="small">Vota tells users what they need to capture in real-time so your team always knows what is needed and never have to dig around for receipts.</p>
       <img src="/images/illus_alert.svg" alt="" />
     </div>
   </section>
-  
+
   <section class="feature feed row">
-    <div class="description col">
-      <h3>Intelligent Transactions</h3>
-      <p class="small">See the actual places and websites you spend money at, like "Whole Foods Hollywood" instead of "WHLFDS ST 102".</p>
-      <img src="/images/illus_card_swipe.svg" alt="" />
-    </div>
+      <div class="description col">
+          <h3>You Take Control</h3>
+          <p class="small">Anyone who needs to know is alerted in real time and limits can be tweaked on the fly eliminating fraud and out of compliance transactions.</p>
+          <img src="/images/illus_alert.svg" alt="" />
+        </div>
     <div class="shot col">
-      <div class="iphone_frame">
-        <img src="/images/ss_feed.jpg" alt="" />
+      <div class="notif">
+        <img src="/images/notification_ui.png" alt="Rotate alert which requires image and alert which requires nothing." />
       </div>
     </div>
   </section>
 
-  <!--section class="feature activity row">
+  <section class="feature alerts row">
     <div class="shot col">
-      <div class="card">
-        <img src="/images/comments_ui.svg" alt="" />
+      <div class="notif">
+        <img src="/images/notification_ui.png" alt="" />
       </div>
     </div>
     <div class="description col">
-      <h3>Stay in Touch</h3>
-      <p class="small">Add friends to keep in touch without "checking in". Comment on their activity, or just send them 👍s.</p>
-      <img src="/images/illus_activity.svg" alt="" />
+      <h3>Everyone can have a card.</h3>
+      <p class="small">A simple swipe activates and deactivates cards with rules for where they can be used and for how much.<BR><BR> Now EVERYONE can have their OWN card.</p>
+      <img src="/images/illus_alert.svg" alt="" />
     </div>
   </section>
 
+
+  <section class="feature feed row">
+      <div class="description col">
+        <h3>Intelligent Transactions</h3>
+        <p class="small">See the actual places and websites you spend money at, like "Whole Foods Hollywood" instead of "WHLFDS ST 102".</p>
+        <img src="/images/illus_card_swipe.svg" alt="" />
+      </div>
+      <div class="shot col">
+        <div class="iphone_frame">
+          <img src="/images/ss_feed.jpg" alt="" />
+        </div>
+      </div>
+    </section>
   <section class="feature discover row">
-    <div class="description col">
-      <h3>Discover Cool Places</h3>
-      <p class="small">Get personalized recommendations from the people you trust.</p>
-      <img src="/images/illus_explore.svg" alt="" />
-    </div>
-    <div class="shot col">
-      <div class="map">
-        <img src="/images/map_ui.jpg" alt="" />
+      <div class="shot col">
+        <div >
+          <img src="/images/benefit.png" alt="" />
+        </div>
       </div>
-      <div class="card">
-        <img src="/images/discover_ui.jpg" alt="" />
+      <div class="description col">
+          <h3>Vota is FREE!</h3>
+          <p class="small">Vota is a public benefit corporation, meaning we operate for the public good, not like a credit card company.<Br><BR>You spend what you have and we don't charge you onerous fees.</p>
+          <img src="/images/illus_card_swipe.svg" alt="" />
+        </div>
+    </section>
+
+  <section class="feature description row">
+      <div class="shot col">
+        <table class="rewards">
+          <tr>
+            <td><img class="logo" src="/images/logos/amazon.png" alt="" /></td>
+            <td><img class="logo" src="/images/logos/target.png" alt="" /></td>
+          </tr>
+          <tr>
+            <td class="text">Up to 10% cash back</td>
+            <td class="text">Up to 6% cash back</td></tr>
+          <tr>
+              <td><img class="logo" src="/images/logos/IHG.png" alt="" /></td>
+              <td><img class="logo" src="/images/logos/hertz.png" alt="" /></td>
+          </tr>
+          <tr>
+              <td class="text">Up to 8% cash back</td>
+              <td class="text">Up to 4% cash back</td>
+          </tr>
+        </table>
       </div>
-    </div>
-  </section-->
+      <div class="description col">
+          <h3>Rewards</h3>
+          <p class="small">Traditional “rewards” cards give you 1% here or there. We partnered directly with merchants to maximize rewards! Simply open Vota, activate your rewards, and shop online.</p><Br>
+          <p class="small">Earn up to 8% at IHG hotels, or 10% back on Amazon purchases!</p>
+          <img src="/images/illus_card_swipe.svg" alt="" />
+        </div>
+    </section>
+  
+    <section class="feature feed row">
+      
+        <div class="description col">
+            <h3>Swipe directly to Quickbooks</h3>
+            <p class="small">Every swipe goes right into your books!</p>
+            <img src="/images/illus_card_swipe.svg" alt="" />
+          </div>
+          <div class="shot col">
+            <div class="iphone_frame">
+              <img src="/images/ss_feed.jpg" alt="" />
+            </div>
+          </div>
+      </section>
+
 
   <section class="feature secure row">
     <div class="description col">
-      <h3>Secure</h3>
-      <p class="small">Vota uses bank-level security, and your login and credit card information is never stored.</p>
+      <h3>Liablity Coverage</h3>
+      <p class="small">With real time notifications, the Vota Card is the most secure ever available; but if something bad does happen, we have you covered.</p>
       <img src="/images/illus_security.svg" alt="" />
     </div>
     <footer class="footer_stacked">

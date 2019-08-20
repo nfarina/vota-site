@@ -382,6 +382,20 @@
 
   }
 
+  .rewards {
+    align-content: center;
+    padding: 20px;
+    .logo {
+      height: 100px;
+    }
+
+    .text {
+      align-content: center;
+    padding: 20px;
+    }
+    
+  }
+
   .footer_stacked {
     background: #fff;
     box-shadow: 0 -200px 0 #fff, 0 200px 0 #fff;
