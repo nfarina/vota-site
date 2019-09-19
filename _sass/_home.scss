@@ -15,7 +15,7 @@
     }
 
     .use_your_words {
-      margin: 6.25rem auto 9.375rem;
+      margin: 6.25rem auto;
       padding: 0 6.25rem;
       @include bp(mama-bear) {
         padding: 0 3.75rem;
@@ -244,7 +244,7 @@
     }
 
     &.easy {
-      background: $color4;
+      background: $color5;
 
       .description {
         @include bp(baby-bear) {
@@ -269,6 +269,7 @@
     }
 
     &.control {
+      background: $color4;
 
       .shot {
         @include bp(baby-bear) {
@@ -357,8 +358,7 @@
     }
 
     &.quickbooks {
-      background: $color4;
-
+      
       .shot {
         align-self: end;
         bottom: -3.75rem;
