@@ -1,0 +1,261 @@
+---
+layout: layout
+---
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const myParam = urlParams.get('version');
+</script>
+<script type="text/javascript" src="http://scrollmagic.io/assets/js/lib/greensock/TweenMax.min.js"></script>
+<script type="text/javascript" src="http://scrollmagic.io/scrollmagic/uncompressed/ScrollMagic.js"></script>
+<script type="text/javascript" src="http://scrollmagic.io/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+
+
+<style type="text/css">
+	.parallaxParent {
+		height: 100vh;
+		overflow: hidden;
+	}
+	.parallaxParent > * {
+		height: 200%;
+		position: relative;
+		top: -100%;
+	}
+  #notification {
+		height: 40px;
+    width: 100px;
+		position: relative;
+    left: 50%;
+    margin-left: -50px;
+    border-radius: 5px;
+    background-color:#1e90ff;
+	}
+</style>
+
+<div class="home content">
+<section class="hero row" id="#my-sticky-element">
+    <div class="col">
+      <div class="use_your_words">
+        <div class="pill">Vota is in beta!</div>
+
+        
+        <h1>The End of Expense Reports.</h1>
+        <p class="tag">A credit card that fills all the blanks and alerts all parties in real time.</p> 
+        <p class="tag">With Vota, you will NEVER create or approve another expense report.</p>
+
+
+
+        <div class="form_wrapper">
+          <p class="get_it">Get Vota in Minutes on iPhone & Android:</p>
+          <form onsubmit="sendSMS(this); return false;">
+            <span class="input_wrapper">
+              <input type="tel" id="phone" name="phone" tabindex=1>
+              <label class="input_label" for="phone">
+                <span>Phone Number</span>
+              </label>
+            </span>
+            <input type="submit" class="button" value="Text me the link" tabindex=2>
+          </form>
+        </div>
+        <div class="stores">
+          <a href="https://itunes.apple.com/us/app/enlight-app/id1216484571?ls=1&mt=8"><img src="/images/app_store_badge.svg" alt="" /></a>
+          <a href="https://play.google.com/store/apps/details?id=com.enlighthq.mobile"><img src="/images/google_play_badge.svg" alt="" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="illus_hero">
+        <img src="/images/illus_hero.svg" alt="" />
+      </div>
+    </div>
+  </section>
+
+<div class="spacer s0"></div>
+<div id="parallax1" class="parallaxParent">
+	<div style="background-image: url(http://scrollmagic.io/assets/img/example_parallax_bg1.png);"></div>
+</div>
+<div class="spacer s1" id="section1">
+	<div class="box2 blue">
+		<div id="notification" class="box2 skin">
+      <p>You wouldn't like me, when I'm angry!</p>
+      <a href="#" class="viewsource">view source</a>
+    </div>
+      <section class="feature alerts row">
+          <div class="shot col">
+            <div class="notif">
+              <img src="/images/notification_ui.png" alt="" />
+            </div>
+          </div>
+          <div class="description col">
+            <h3>We make it easy</h3>
+            <p class="small">Vota tells users what they need to capture in real-time so your team always knows what is needed and never have to dig around for receipts.</p>
+            <img src="/images/illus_alert.svg" alt="" />
+          </div>
+        </section>
+      
+	</div>
+</div>
+<div class="spacer s0"></div>
+<div id="parallax2" class="parallaxParent">
+  <div style="background-image: url(http://scrollmagic.io/assets/img/example_parallax_bg2.png);"></div>
+
+</div>
+<div class="spacer s1">
+	<div class="box2 blue">
+		<p>Content 2</p>
+		<a href="#" class="viewsource">view source</a>
+	</div>
+</div>
+<div class="spacer s0"></div>
+<div id="parallax3" class="parallaxParent">
+	<div style="background-image: url(http://scrollmagic.io/assets/img/example_parallax_bg3.png);"></div>
+</div>
+<div class="spacer s2"></div>
+<script>
+	// init controller
+  var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+  
+  var controller1 = new ScrollMagic.Controller();
+
+  // build scenes
+  
+  new ScrollMagic.Scene({triggerElement: "#section1"})
+						.setTween("#notification", 0.5, {backgroundColor: "#1e90ff", scale: 1.5}) // trigger a TweenMax.to tween
+						.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+            .addTo(controller1);
+            
+	new ScrollMagic.Scene({triggerElement: "#parallax1"})
+					.setTween("#parallax1 > div", {y: "80%", ease: Linear.easeNone})
+					.addIndicators()
+					.addTo(controller);
+
+	new ScrollMagic.Scene({triggerElement: "#parallax2"})
+					.setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
+					.addIndicators()
+					.addTo(controller);
+
+	new ScrollMagic.Scene({triggerElement: "#parallax3"})
+					.setTween("#parallax3 > div", {y: "80%", ease: Linear.easeNone})
+					.addIndicators()
+					.addTo(controller);
+</script>
+
+
+
+  <section class="feature feed row">
+      <div class="description col">
+          <h3>You Take Control</h3>
+          <p class="small">Anyone who needs to know is alerted in real time and limits can be tweaked on the fly eliminating fraud and out of compliance transactions.</p>
+          <img src="/images/illus_alert.svg" alt="" />
+        </div>
+    <div class="shot col">
+      <div class="notif">
+        <img src="/images/notification_ui.png" alt="Rotate alert which requires image and alert which requires nothing." />
+      </div>
+    </div>
+  </section>
+
+  <section class="feature alerts row">
+    <div class="shot col">
+      <div class="notif">
+        <img src="/images/notification_ui.png" alt="" />
+      </div>
+    </div>
+    <div class="description col">
+      <h3>Everyone can have a card.</h3>
+      <p class="small">A simple swipe activates and deactivates cards with rules for where they can be used and for how much.<BR><BR> Now EVERYONE can have their OWN card.</p>
+      <img src="/images/illus_alert.svg" alt="" />
+    </div>
+  </section>
+
+
+  <section class="feature feed row">
+      <div class="description col">
+        <h3>Intelligent Transactions</h3>
+        <p class="small">See the actual places and websites you spend money at, like "Whole Foods Hollywood" instead of "WHLFDS ST 102".</p>
+        <img src="/images/illus_card_swipe.svg" alt="" />
+      </div>
+      <div class="shot col">
+        <div class="iphone_frame">
+          <img src="/images/ss_feed.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+  <section class="feature discover row">
+      <div class="shot col">
+        <div >
+          <img src="/images/benefit.png" alt="" />
+        </div>
+      </div>
+      <div class="description col">
+          <h3>Vota is FREE!</h3>
+          <p class="small">Vota is a public benefit corporation, meaning we operate for the public good, not like a credit card company.<Br><BR>You spend what you have and we don't charge you onerous fees.</p>
+          <img src="/images/illus_card_swipe.svg" alt="" />
+        </div>
+    </section>
+
+  <section class="feature description row">
+      <div class="shot col">
+        <table class="rewards">
+          <tr>
+            <td><img class="logo" src="/images/logos/amazon.png" alt="" /></td>
+            <td><img class="logo" src="/images/logos/target.png" alt="" /></td>
+          </tr>
+          <tr>
+            <td class="text">Up to 10% cash back</td>
+            <td class="text">Up to 6% cash back</td></tr>
+          <tr>
+              <td><img class="logo" src="/images/logos/IHG.png" alt="" /></td>
+              <td><img class="logo" src="/images/logos/hertz.png" alt="" /></td>
+          </tr>
+          <tr>
+              <td class="text">Up to 8% cash back</td>
+              <td class="text">Up to 4% cash back</td>
+          </tr>
+        </table>
+      </div>
+      <div class="description col">
+          <h3>Rewards</h3>
+          <p class="small">Traditional “rewards” cards give you 1% here or there. We partnered directly with merchants to maximize rewards! Simply open Vota, activate your rewards, and shop online.</p><Br>
+          <p class="small">Earn up to 8% at IHG hotels, or 10% back on Amazon purchases!</p>
+          <img src="/images/illus_card_swipe.svg" alt="" />
+        </div>
+    </section>
+  
+    <section class="feature feed row">
+      
+        <div class="description col">
+            <h3>Swipe directly to Quickbooks</h3>
+            <p class="small">Every swipe goes right into your books!</p>
+            <img src="/images/illus_card_swipe.svg" alt="" />
+          </div>
+          <div class="shot col">
+            <div class="iphone_frame">
+              <img src="/images/ss_feed.jpg" alt="" />
+            </div>
+          </div>
+      </section>
+
+
+  <section class="feature secure row">
+    <div class="description col">
+      <h3>Liablity Coverage</h3>
+      <p class="small">With real time notifications, the Vota Card is the most secure ever available; but if something bad does happen, we have you covered.</p>
+      <img src="/images/illus_security.svg" alt="" />
+    </div>
+    <footer class="footer_stacked">
+      <ul>
+        <li><a href="/terms">Terms &amp; Conditions</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><p class="small">&#169; 2019 Enlight LLC</p></li>
+      </ul>
+      <div class="stores">
+        <a href="https://itunes.apple.com/us/app/enlight-app/id1216484571?ls=1&mt=8"><img src="/images/app_store_badge.svg" alt="" /></a>
+        <a href="https://play.google.com/store/apps/details?id=com.enlighthq.mobile"><img src="/images/google_play_badge.svg" alt="" /></div>
+      </div>
+    </footer>
+  </section>
+
+</div>
