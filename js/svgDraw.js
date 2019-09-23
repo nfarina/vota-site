@@ -13,7 +13,7 @@ function drawPath(svg, path, startX, startY, endX, endY) {
   if (svg.attr("height") <  endY)                 svg.attr("height", endY);
   if (svg.attr("width" ) < (startX + stroke) )    svg.attr("width", (startX + stroke));
   if (svg.attr("width" ) < (endX   + stroke) )    svg.attr("width", (endX   + stroke));
-  
+
   var deltaX = (endX - startX) * 0.3;
   var deltaY = (endY - startY) * 0.3;
   // for further calculations which ever is the shortest distance
@@ -73,8 +73,12 @@ $(document).ready(function() {
   // reset svg each time 
   $("#svg1").attr("height", "0");
   $("#svg1").attr("width", "0");
-  connectElements($("#svg1"), $("#pathOpen"), $("#getIt"),  $("#open"));
-  connectElements($("#svg1"), $("#pathCards"), $("#open"),  $("#getCards"));
+  connectElements($("#svg1"), $("#pathOpen"), $("#getIt"),  $("#openAccount"));
+  connectElements($("#svg1"), $("#pathCards"), $("#openAccount"),  $("#getCards"));
+  connectElements($("#svg1"), $("#pathDone"), $("#getCards"),  $("#beDone"));
+  connectElements($("#svg1"), $("#pathQb"), $("#beDone"),  $("#qb"));
+  connectElements($("#svg1"), $("#pathNotif"), $("#beDone"),  $("#notifMan"));
+  
   tweenLines();
 });
 
@@ -82,8 +86,11 @@ $(window).resize(function () {
   // reset svg each time 
   $("#svg1").attr("height", "0");
   $("#svg1").attr("width", "0");
-  connectElements($("#svg1"), $("#pathOpen"), $("#getIt"),  $("#open"));
-  connectElements($("#svg1"), $("#pathCards"), $("#open"),  $("#getCards"));
+  connectElements($("#svg1"), $("#pathOpen"), $("#getIt"),  $("#openAccount"));
+  connectElements($("#svg1"), $("#pathCards"), $("#openAccount"),  $("#getCards"));
+  connectElements($("#svg1"), $("#pathDone"), $("#getCards"),  $("#beDone"));
+  connectElements($("#svg1"), $("#pathQb"), $("#beDone"),  $("#qb"));
+  connectElements($("#svg1"), $("#pathNotif"), $("#beDone"),  $("#notifMan"));
   tweenLines();
 });
 
@@ -96,30 +103,96 @@ function pathPrepare ($el) {
   
 }
 
-var $line = $("path#line");
-var $toCards = $("path#pathCards");
-
 function tweenLines() {
+
+
+  //var $line = $("path#line");
+  var $toOpen = $("path#pathOpen");
+  var $toCards = $("path#pathCards");
+  var $toDone = $("path#pathDone");
+  var $toQb = $("path#pathQb");
+  var $toNotif = $("path#pathNotif");
+
+
   // prepare SVG
-  pathPrepare($line);
+  //pathPrepare($line);
+  pathPrepare($toOpen);
   pathPrepare($toCards);
+  pathPrepare($toDone);
+  pathPrepare($toQb);
+  pathPrepare($toNotif);
 
   // init controller
   var controller = new ScrollMagic.Controller();
+  
 
   // build tween
-  var tween = new TimelineMax()
-    .add(TweenMax.to($line, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
-  var tween = new TimelineMax()
-  .add(TweenMax.to($toCards, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
+  //var tween = new TimelineMax()
+  //  .add(TweenMax.to($line, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
+  var tweenOpen = new TimelineMax()
+    .add(TweenMax.to($toOpen, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})); // draw word for 0.9
+  var tweenCards = new TimelineMax()
+    .add(TweenMax.to($toCards, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})); // draw word for 0.9
+  var tweenDone = new TimelineMax()
+    .add(TweenMax.to($toDone, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})); // draw word for 0.9
+  var tweenNotif = new TimelineMax()
+    .add(TweenMax.to($toNotif, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})); // draw word for 0.9
+  var tweenQb = new TimelineMax()
+    .add(TweenMax.to($toQb, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})); // draw word for 0.9
 
 
   // build scene
-  var scene = new ScrollMagic.Scene({triggerElement: "#notif", duration: 500, tweenChanges: true})
-          .setTween(tween)
-          .addTo(controller);
-  var scene = new ScrollMagic.Scene({triggerElement: "#open", duration: 300, tweenChanges: true})
-  .setTween(tween)
+  //var scene = new ScrollMagic.Scene({triggerElement: "#notif", duration: 500, tweenChanges: true})
+  //        .setTween(tween)
+  //        .addTo(controller);
+  var sceneOpen = new ScrollMagic.Scene({triggerElement: "#getIt", duration: 300, tweenChanges: true})
+                             .setTween(tweenOpen)
+                             .addTo(controller);
+  var sceneCards = new ScrollMagic.Scene({triggerElement: "#openAccount", duration: 300, tweenChanges: true})
+                             .setTween(tweenCards)
+                             .addTo(controller);
+  var sceneDone = new ScrollMagic.Scene({triggerElement: "#getCards", duration: 300, tweenChanges: true})
+                             .setTween(tweenDone)
+                             .addTo(controller);
+  var sceneNotif = new ScrollMagic.Scene({triggerElement: "#beDone", duration: 300, tweenChanges: true})
+  .setTween(tweenNotif)
+  .addTo(controller);
+  var sceneQb = new ScrollMagic.Scene({triggerElement: "#beDone", duration: 300, tweenChanges: true})
+  .setTween(tweenQb)
   .addTo(controller);
 
 }
+
+// define images
+var images = [
+  "/images/confetti/illus_conf_1.svg",
+  "/images/confetti/illus_conf_2.svg",
+  "/images/confetti/illus_conf_3.svg",
+  "/images/confetti/illus_conf_4.svg",
+  "/images/confetti/illus_conf_5.svg",
+];
+
+// TweenMax can tween any property of any object. We use this object to cycle through the array
+var obj = {curImg: 0};
+
+// create tween
+var tweenConfetti = TweenMax.to(obj, 10.5,
+  {
+    curImg: images.length - 1,	// animate propery curImg to number of images
+    roundProps: "curImg",				// only integers so it can be used as an array index
+    repeat: 1,									// repeat 3 times
+    immediateRender: true,			// load first image automatically
+    ease: Linear.easeNone,			// show every image the same ammount of time
+    onUpdate: function () {
+      $("#confetti").attr("src", images[obj.curImg]); // set the image source
+    }
+  }
+);
+
+// init controller
+var controllerConfetti = new ScrollMagic.Controller();
+
+// build scene
+var scene = new ScrollMagic.Scene({triggerElement: "#intelligent", duration: 1000})
+        .setTween(tweenConfetti)
+        .addTo(controllerConfetti);

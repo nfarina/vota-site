@@ -19,9 +19,13 @@ layout: layout
   #notif
   {
     transform: scale(0.1, 0.1);
-    margin-left: -200px;
-    margin-top: 100px;
+    margin-left: 0px;
+    margin-top: -350px;
     opacity: 0;
+  }
+  #qb
+  {
+    margin-left: 5  0px;
   }
   #line
   {
@@ -34,11 +38,55 @@ layout: layout
     position:absolute;
     margin-top: -50px;
   }
+
+  #illusFree {
+    margin-top: -466px;
+  }
 </style>
+
 
 
 <div class="home content">
 
+    <div id="svgContainer" style="margin: 50px 50px;">
+        <svg id="svg1" width="0" height="0" >
+            <path
+                id="pathOpen"
+                d="M0 0"         
+                stroke="url(#paint0_linear)"
+                fill="none" 
+                stroke-width="12px";/>
+                <path
+                id="pathCards"
+                d="M0 0"         
+                stroke="url(#paint0_linear)"
+                fill="none" 
+                stroke-width="12px";/>
+                <path
+                id="pathDone"
+                d="M0 0"         
+                stroke="url(#paint0_linear)"
+                fill="none" 
+                stroke-width="12px";/>
+                <path
+                id="pathNotif"
+                d="M0 0"         
+                stroke="url(#paint0_linear)"
+                fill="none" 
+                stroke-width="12px";/>
+                <path
+                id="pathQb"
+                d="M0 0"         
+                stroke="url(#paint0_linear)"
+                fill="none" 
+                stroke-width="12px";/>
+            <defs>
+              <linearGradient id="paint0_linear" x1="41.5" y1="4" x2="41.5" y2="327.5" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#16B4BD"/>
+                <stop offset="1" stop-color="#32BB94"/>
+            </defs>
+        </svg>
+    </div>
   <section class="hero row">
     <div class="col">
       <div class="use_your_words">
@@ -71,30 +119,9 @@ layout: layout
   </section>
 
 
-<div id="svgContainer" style="margin: 50px 50px;">
-    <svg id="svg1" width="0" height="0" >
-        <path
-            id="pathOpen"
-            d="M0 0"         
-            stroke="url(#paint0_linear)"
-            fill="none" 
-            stroke-width="12px";/>
-            <path
-            id="pathCards"
-            d="M0 0"         
-            stroke="url(#paint0_linear)"
-            fill="none" 
-            stroke-width="12px";/>
-        <defs>
-          <linearGradient id="paint0_linear" x1="41.5" y1="4" x2="41.5" y2="327.5" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#16B4BD"/>
-            <stop offset="1" stop-color="#32BB94"/>
-        </defs>
-    </svg>
-</div>
 
   <section class="feature easy row">
-    <div class="description col" id="open">
+    <div class="description col" id="openAccount">
       <h3>Open your account in minutes</h3>
       <p class="small">Create a new account by simply telling us a little about your business.</p>
     </div>
@@ -112,50 +139,43 @@ layout: layout
         <img src="/images/illus_cards.svg" alt="" />
       </div>
       <div class="description col" id="getCards">
-          <h3>Get cards for everyone can have a card</h3>
-          <p class="small">A simple swipe activates and deactivates cards with rules for where they can be used and for how much.<BR><BR> Now EVERYONE can have their OWN card.</p>
+          <h3>Be Your Own Bank</h3>
+          <p class="small">Issue cards to employees, set spending limits, or deactivate them with a single tap. <br><br>Because when everyone can have a card, every penny can be tracked.
+            </p>
         </div>
     </section>
 
-
-  <section class="feature easy row">
-      <div class="shot col">
-          <div class="iphone_frame">
-            <img src="/images/screenshot_easy.svg" alt="" />
-          </div>
-        </div>
-    <div class="description col">
-      <h3>We make it easy</h3>
-      <p class="small">Vota tells users what they need to capture in real-time so your team never has to dig around for receipts.</p>
+  <section class="feature easy row">  
+    <div class="description col" id="beDone">
+      <h3>Be Done</h3>
+      <p class="small">We tell you what to capture in real-time so once the transaction happens, the expense report is done.</p>
     </div>
-    
+    <div class="shot col">
+        <div class="iphone_frame">
+          <img src="/images/screenshot_easy.svg" alt="" />
+        </div>
+      </div>
   </section>
 
   <section id="takeControl" class="feature control reverse row">
-    <div class="shot col">
-      <img src="/images/illus_control_1.svg" alt="" />
-      <img id="notif" src="/images/illus_control_2.svg" alt="" />
-      <svg width="85" height="328" viewBox="0 0 85 328" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path id="line" d="M2 4L55 27.5V190.5L81 211.5V283M55 191L29 223V327.5" stroke="url(#paint0_linear)" stroke-width="8"/>
-        <defs>
-        <linearGradient id="paint0_linear" x1="41.5" y1="4" x2="41.5" y2="327.5" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#16B4BD"/>
-        <stop offset="1" stop-color="#32BB94"/>
-        </linearGradient>
-        </defs>
-        </svg>
-        
-        
-        
-            
+    <div class="shot col padded">
+      <div id="notifMan">
+        <img src="/images/illus_control_1.svg" alt="" />
+      </div>
+      <div id="notif">
+        <img src="/images/illus_control_2.svg" alt="" />
+      </div> 
     </div>
     <div class="description col">
-      <h3>You take control</h3>
-      <p class="small">Anyone who needs to know is alerted in real-time. Limits can be tweaked on the fly, eliminating fraud and out-of-compliance transactions.</p>
+        <div id="qb">   
+            <img src="/images/illus_books.svg" alt="" />    
+          </div>  
     </div>
-  </section>
-
-
+    <div class="footer">
+        <h3>Transactions are filed instantly</h3>
+        <p class="small">Managers, Admins, and even Quickbooks are updated instantly with NO MANUAL DATA ENTRY!<br><br>Like we said, the expense report is done!</p>
+    </div>
+    </section>
 
 <script>
   var controller1 = new ScrollMagic.Controller();
@@ -168,13 +188,13 @@ layout: layout
 </script>
 
 
-  <section class="feature transactions reverse row">
+  <section class="feature easy reverse row">
     <div class="shot col">
       <div class="iphone_frame">
         <img src="/images/screenshot_transaction.jpg" alt="" />
       </div>
     </div>
-    <div class="description col">
+    <div class="description col" id="intelligent">
       <h3>Intelligent transactions</h3>
       <p class="small">See the actual places and websites you spend money at, like "Whole Foods Hollywood" instead of "WHLFDS ST 102".</p>
     </div>
@@ -187,7 +207,12 @@ layout: layout
       <p class="small">You spend what you have and we don't charge you onerous fees.</p>
     </div>
     <div class="shot col">
-      <img src="/images/illus_free.svg" alt="" />
+      <div id="imagesequence">
+        <img id="confetti" src="/images/confetti/illus_conf_1.svg"><br>
+      </div>
+      <div>
+        <img id="illusFree" src="/images/confetti/illus_free.svg" alt="" />
+      </div>
     </div>
   </section>
 
@@ -214,16 +239,6 @@ layout: layout
       <h3>Rewards</h3>
       <p class="small">Traditional “rewards” cards give you 1% here or there. We partnered directly with merchants to maximize rewards! Simply open Vota, activate your rewards, and shop online.</p>
       <p class="small">Earn up to 8% at IHG hotels, or 10% back on Amazon purchases!</p>
-    </div>
-  </section>
-
-  <section class="feature quickbooks row">
-    <div class="description col">
-      <h3>Swipe directly to Quickbooks</h3>
-      <p class="small">Every swipe goes right into your books!</p>
-    </div>
-    <div class="shot col">
-      <img src="/images/illus_books.svg" alt="" />
     </div>
   </section>
 

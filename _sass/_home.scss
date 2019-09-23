@@ -243,6 +243,10 @@
 
     }
 
+    .padded {
+        margin-left: -2px;
+
+    }
     &.easy {
       background: $color4;
 
@@ -429,6 +433,19 @@
         margin-top: 1.25rem;
       }
 
+    }
+
+    .footer {
+      margin: 12.5rem auto;
+      margin-top: -170px;
+      margin-bottom: 0px;
+      grid-column: 1 / span 2;
+      text-align: center;
+      width: 100%;
+
+      h3 {
+        margin-bottom: 1.25rem;
+      }
     }
 
     .card {
