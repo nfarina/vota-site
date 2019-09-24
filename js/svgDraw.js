@@ -64,21 +64,19 @@ function connectElements(svg, path, startElem, endElem) {
   var endX = endCoord.left + 0.5*endElem.outerWidth() - svgLeft;
   var endY = endCoord.top  - svgTop;
 
+  console.log(endY);
+
   // call function for drawing the path
   drawPath(svg, path, startX, startY, endX, endY);
-
 }
+
 
 $(document).ready(function() {
   // reset svg each time 
   $("#svg1").attr("height", "0");
   $("#svg1").attr("width", "0");
-  connectElements($("#svg1"), $("#pathOpen"), $("#getIt"),  $("#openAccount"));
-  connectElements($("#svg1"), $("#pathCards"), $("#openAccount"),  $("#getCards"));
-  connectElements($("#svg1"), $("#pathDone"), $("#getCards"),  $("#beDone"));
-  connectElements($("#svg1"), $("#pathQb"), $("#beDone"),  $("#qb"));
-  connectElements($("#svg1"), $("#pathNotif"), $("#beDone"),  $("#notifMan"));
-  
+
+  createLines();
   tweenLines();
 });
 
@@ -86,14 +84,24 @@ $(window).resize(function () {
   // reset svg each time 
   $("#svg1").attr("height", "0");
   $("#svg1").attr("width", "0");
-  connectElements($("#svg1"), $("#pathOpen"), $("#getIt"),  $("#openAccount"));
-  connectElements($("#svg1"), $("#pathCards"), $("#openAccount"),  $("#getCards"));
-  connectElements($("#svg1"), $("#pathDone"), $("#getCards"),  $("#beDone"));
-  connectElements($("#svg1"), $("#pathQb"), $("#beDone"),  $("#qb"));
-  connectElements($("#svg1"), $("#pathNotif"), $("#beDone"),  $("#notifMan"));
+  createLines();
   tweenLines();
 });
 
+function createLines() {
+
+  var width = $(window).width();
+
+  console.log(width);
+  if (width > 650) {
+    connectElements($("#svg1"), $("#pathOpen"), $("#getIt"),  $("#openAccount"));
+    connectElements($("#svg1"), $("#pathCards"), $("#openAccount"),  $("#getCards"));
+    connectElements($("#svg1"), $("#pathDone"), $("#getCards"),  $("#beDone"));
+  }
+  connectElements($("#svg1"), $("#pathQb"), $("#beDone"),  $("#qb"));
+  connectElements($("#svg1"), $("#pathNotif"), $("#beDone"),  $("#notifMan"));
+  console.log('lines drawn');
+}
 
 
 function pathPrepare ($el) {
@@ -124,7 +132,8 @@ function tweenLines() {
 
   // init controller
   var controller = new ScrollMagic.Controller();
-  
+
+  var width = $(window).width();
 
   // build tween
   //var tween = new TimelineMax()
@@ -141,10 +150,7 @@ function tweenLines() {
     .add(TweenMax.to($toQb, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})); // draw word for 0.9
 
 
-  // build scene
-  //var scene = new ScrollMagic.Scene({triggerElement: "#notif", duration: 500, tweenChanges: true})
-  //        .setTween(tween)
-  //        .addTo(controller);
+  // build scenes
   var sceneOpen = new ScrollMagic.Scene({triggerElement: "#getIt", duration: 300, tweenChanges: true})
                              .setTween(tweenOpen)
                              .addTo(controller);
@@ -155,11 +161,11 @@ function tweenLines() {
                              .setTween(tweenDone)
                              .addTo(controller);
   var sceneNotif = new ScrollMagic.Scene({triggerElement: "#beDone", duration: 300, tweenChanges: true})
-  .setTween(tweenNotif)
-  .addTo(controller);
+                             .setTween(tweenNotif)
+                             .addTo(controller);
   var sceneQb = new ScrollMagic.Scene({triggerElement: "#beDone", duration: 300, tweenChanges: true})
-  .setTween(tweenQb)
-  .addTo(controller);
+                             .setTween(tweenQb)
+                             .addTo(controller);
 
 }
 
@@ -180,7 +186,7 @@ var tweenConfetti = TweenMax.to(obj, 10.5,
   {
     curImg: images.length - 1,	// animate propery curImg to number of images
     roundProps: "curImg",				// only integers so it can be used as an array index
-    repeat: 1,									// repeat 3 times
+    repeat: 3,									// repeat 3 times
     immediateRender: true,			// load first image automatically
     ease: Linear.easeNone,			// show every image the same ammount of time
     onUpdate: function () {
