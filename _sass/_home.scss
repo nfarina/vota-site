@@ -1,5 +1,16 @@
 .home {
 
+  .pill {
+    background-color: $color12;
+    border-radius: 15px;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+    padding: 9px 15px 7px;
+  }
+
   .hero.row {
     align-items: center;
     display: grid;
@@ -34,16 +45,6 @@
       }
     }
 
-    .pill {
-      background-color: $color12;
-      border-radius: 15px;
-      color: #fff;
-      display: inline-block;
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 2.5rem;
-      padding: 9px 15px 7px;
-    }
 
     h1 {
       margin-bottom: 1.25rem;
@@ -225,6 +226,12 @@
     }
     @include bp(baby-bear) {
       grid-template-columns: 1fr;
+    }
+
+    .disclosure {
+      vertical-align: super;
+      font-size: smaller;
+      font-style: italic;
     }
 
     &.reverse {
