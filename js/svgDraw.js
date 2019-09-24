@@ -70,15 +70,14 @@ function connectElements(svg, path, startElem, endElem) {
   drawPath(svg, path, startX, startY, endX, endY);
 }
 
-
-$(document).ready(function() {
+window.onload = function () {
   // reset svg each time 
   $("#svg1").attr("height", "0");
   $("#svg1").attr("width", "0");
 
   createLines();
   tweenLines();
-});
+}
 
 $(window).resize(function () {
   // reset svg each time 
@@ -202,3 +201,9 @@ var controllerConfetti = new ScrollMagic.Controller();
 var scene = new ScrollMagic.Scene({triggerElement: "#intelligent", duration: 1000})
         .setTween(tweenConfetti)
         .addTo(controllerConfetti);
+
+var notifController = new ScrollMagic.Controller();
+
+new ScrollMagic.Scene({triggerElement: "#takeControl"})
+          .setTween("#notif", 0.5, {opacity: 1, scale: 1}) // trigger a TweenMax.to tween
+          .addTo(notifController);
