@@ -227,6 +227,12 @@
       grid-template-columns: 1fr;
     }
 
+    .disclosure {
+      vertical-align: super;
+      font-size: smaller;
+      font-style: italic;
+    }
+
     &.reverse {
 
       .description {
@@ -243,21 +249,25 @@
 
     }
 
-    &.easy {
-      background: $color5;
+    .padded {
+      margin-top: 20px;
+      margin-left: 10px;
+  }
+  &.easy {
+    background: $color4;
 
-      .description {
-        @include bp(baby-bear) {
-          margin-bottom: 0;
-        }
+    .description {
+      @include bp(baby-bear) {
+        margin-bottom: 5rem;
       }
+    }
 
       .shot {
         align-self: end;
         bottom: -5rem;
         position: relative;
         @include bp(baby-bear) {
-          bottom: -10rem;
+          bottom: -2rem;
           margin-top: -5rem;
         }
       }
@@ -272,11 +282,18 @@
       background: $color4;
 
       .shot {
+        align-items: center;
+
         @include bp(baby-bear) {
           margin-bottom: 6.25rem;
+          width: 160px;
+          padding-left: 10px;
         }
       }
-
+      .description {
+        padding-left: -10px;
+        text-align: center;       
+      }
     }
 
     &.cards {
@@ -358,18 +375,21 @@
     }
 
     &.quickbooks {
-      
       .shot {
-        align-self: end;
-        bottom: -3.75rem;
-        position: relative;
+        align-items: center;
+
         @include bp(baby-bear) {
-          margin-top: -3.75rem;
+          margin-bottom: 6.25rem;
+          width: 160px;
+          padding-left: 10px;
         }
       }
-
+      .description {
+        padding-left: -10px;
+        text-align: center;       
+      }
     }
-
+  
     &.secure {
 
       .description {
@@ -429,6 +449,22 @@
         margin-top: 1.25rem;
       }
 
+    }
+
+    .footer {
+      margin: 12.5rem auto;
+      margin-top: -170px;
+      margin-bottom: 0px;
+      grid-column: 1 / span 2;
+      text-align: center;
+      width: 100%;
+      @include bp(baby-bear) {
+        margin-bottom: 3rem;
+        margin-top: -1rem;
+      }
+      h3 {
+        margin-bottom: 1.25rem;
+      }
     }
 
     .card {
@@ -524,3 +560,14 @@
   }
 
 }
+
+#notif
+  {
+    transform: scale(0.1, 0.1);
+    margin-left: 0px;
+    opacity: 0;
+    margin-top: -350px;
+    @include bp(baby-bear){
+      margin-top: -290px;
+    }
+  }
