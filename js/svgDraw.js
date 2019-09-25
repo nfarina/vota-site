@@ -185,7 +185,7 @@ var tweenConfetti = TweenMax.to(obj, 10.5,
   {
     curImg: images.length - 1,	// animate propery curImg to number of images
     roundProps: "curImg",				// only integers so it can be used as an array index
-    repeat: 3,									// repeat 3 times
+    repeat: 6,									// repeat 3 times
     immediateRender: true,			// load first image automatically
     ease: Linear.easeNone,			// show every image the same ammount of time
     onUpdate: function () {
