@@ -62,7 +62,12 @@
     }
 
     .form_wrapper {
-      display: block;
+      // display: block;
+      // Always hiding the form for now - we haven't set up Branch for Vota 2.0
+      // (hoping to avoid it by using Firebase Dynamic Links which we have to
+      // use anyway).
+      display: none;
+
       @include bp(baby-bear) {
         display: none;
       }
@@ -83,7 +88,10 @@
     }
 
     .stores {
-      display: none;
+      // display: none;
+      // See comment in form_wrapper above.
+      display: block;
+
       margin-bottom: 1.25rem;
       @include bp(baby-bear) {
         display: block;
