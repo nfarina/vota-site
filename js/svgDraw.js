@@ -112,8 +112,6 @@ function pathPrepare ($el) {
 
 function tweenLines() {
 
-
-  //var $line = $("path#line");
   var $toOpen = $("path#pathOpen");
   var $toCards = $("path#pathCards");
   var $toDone = $("path#pathDone");
@@ -122,7 +120,6 @@ function tweenLines() {
 
 
   // prepare SVG
-  //pathPrepare($line);
   pathPrepare($toOpen);
   pathPrepare($toCards);
   pathPrepare($toDone);
@@ -135,8 +132,6 @@ function tweenLines() {
   var width = $(window).width();
 
   // build tween
-  //var tween = new TimelineMax()
-  //  .add(TweenMax.to($line, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
   var tweenOpen = new TimelineMax()
     .add(TweenMax.to($toOpen, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})); // draw word for 0.9
   var tweenCards = new TimelineMax()
@@ -166,44 +161,43 @@ function tweenLines() {
                              .setTween(tweenQb)
                              .addTo(controller);
 
+  // notification popup:
+  var sceneNotif = new ScrollMagic.Scene({triggerElement: "#takeControl"})
+                             .setTween("#notif", 0.5, {opacity: 1, scale: 1}) // trigger a TweenMax.to tween
+                             .addTo(controller);
+
+                             
+  // confetti scene:
+  // define images
+  var images = [
+    "/images/confetti/illus_conf_1.svg",
+    "/images/confetti/illus_conf_2.svg",
+    "/images/confetti/illus_conf_3.svg",
+    "/images/confetti/illus_conf_4.svg",
+    "/images/confetti/illus_conf_5.svg",
+  ];
+
+  // TweenMax can tween any property of any object. We use this object to cycle through the array
+  var obj = {curImg: 0};
+
+  // create tween
+  var tweenConfetti = TweenMax.to(obj, 10.5,
+    {
+      curImg: images.length - 1,	// animate propery curImg to number of images
+      roundProps: "curImg",				// only integers so it can be used as an array index
+      repeat: 6,									// repeat 3 times
+      immediateRender: true,			// load first image automatically
+      ease: Linear.easeNone,			// show every image the same ammount of time
+      onUpdate: function () {
+        $("#confetti").attr("src", images[obj.curImg]); // set the image source
+      }
+    }
+  );
+
+    var confettiScene = new ScrollMagic.Scene({triggerElement: "#intelligent", duration: 1000})
+                              .setTween(tweenConfetti)
+                              .addTo(controller);
+
 }
 
-// define images
-var images = [
-  "/images/confetti/illus_conf_1.svg",
-  "/images/confetti/illus_conf_2.svg",
-  "/images/confetti/illus_conf_3.svg",
-  "/images/confetti/illus_conf_4.svg",
-  "/images/confetti/illus_conf_5.svg",
-];
 
-// TweenMax can tween any property of any object. We use this object to cycle through the array
-var obj = {curImg: 0};
-
-// create tween
-var tweenConfetti = TweenMax.to(obj, 10.5,
-  {
-    curImg: images.length - 1,	// animate propery curImg to number of images
-    roundProps: "curImg",				// only integers so it can be used as an array index
-    repeat: 6,									// repeat 3 times
-    immediateRender: true,			// load first image automatically
-    ease: Linear.easeNone,			// show every image the same ammount of time
-    onUpdate: function () {
-      $("#confetti").attr("src", images[obj.curImg]); // set the image source
-    }
-  }
-);
-
-// init controller
-var controllerConfetti = new ScrollMagic.Controller();
-
-// build scene
-var scene = new ScrollMagic.Scene({triggerElement: "#intelligent", duration: 1000})
-        .setTween(tweenConfetti)
-        .addTo(controllerConfetti);
-
-var notifController = new ScrollMagic.Controller();
-
-new ScrollMagic.Scene({triggerElement: "#takeControl"})
-          .setTween("#notif", 0.5, {opacity: 1, scale: 1}) // trigger a TweenMax.to tween
-          .addTo(notifController);
