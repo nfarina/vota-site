@@ -70,6 +70,14 @@ function connectElements(svg, path, startElem, endElem) {
   drawPath(svg, path, startX, startY, endX, endY);
 }
 
+var drawAllLines = false;
+var width = $(window).width();
+
+// we are going to NOT draw the lines for now...
+// if (width > 650) {
+//   drawAllLines = true;
+// }
+
 window.onload = function () {
   // reset svg each time 
   $("#svg1").attr("height", "0");
@@ -89,10 +97,7 @@ $(window).resize(function () {
 
 function createLines() {
 
-  var width = $(window).width();
-
-  console.log(width);
-  if (width > 650) {
+  if (drawAllLines) {
     connectElements($("#svg1"), $("#pathOpen"), $("#getIt"),  $("#openAccount"));
     connectElements($("#svg1"), $("#pathCards"), $("#openAccount"),  $("#getCards"));
     connectElements($("#svg1"), $("#pathDone"), $("#getCards"),  $("#beDone"));
@@ -145,15 +150,17 @@ function tweenLines() {
 
 
   // build scenes
-  var sceneOpen = new ScrollMagic.Scene({triggerElement: "#getIt", duration: 300, tweenChanges: true})
-                             .setTween(tweenOpen)
-                             .addTo(controller);
-  var sceneCards = new ScrollMagic.Scene({triggerElement: "#openAccount", duration: 300, tweenChanges: true})
-                             .setTween(tweenCards)
-                             .addTo(controller);
-  var sceneDone = new ScrollMagic.Scene({triggerElement: "#getCards", duration: 300, tweenChanges: true})
-                             .setTween(tweenDone)
-                             .addTo(controller);
+  if (drawAllLines) {
+    var sceneOpen = new ScrollMagic.Scene({triggerElement: "#getIt", duration: 300, tweenChanges: true})
+                              .setTween(tweenOpen)
+                              .addTo(controller);
+    var sceneCards = new ScrollMagic.Scene({triggerElement: "#openAccount", duration: 300, tweenChanges: true})
+                              .setTween(tweenCards)
+                              .addTo(controller);
+    var sceneDone = new ScrollMagic.Scene({triggerElement: "#getCards", duration: 300, tweenChanges: true})
+                              .setTween(tweenDone)
+                              .addTo(controller);
+  }
   var sceneNotif = new ScrollMagic.Scene({triggerElement: "#beDone", duration: 300, tweenChanges: true})
                              .setTween(tweenNotif)
                              .addTo(controller);
