@@ -1,24 +1,43 @@
 ---
-layout: layout
+layout: layout2
 ---
 
-<script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const myParam = urlParams.get('version');
-</script>
+<style type="text/css">
+  
+  #qb
+  {
+    margin-left: 5  0px;
+  }
+  #line
+  {
+    margin-left: -10px;
+    margin-top: -500px;
+  }
+
+  #svgContainer { 
+    z-index: 10;
+    position:absolute;
+    margin-top: -50px;
+  }
+
+  #illusFree {
+    margin-top: -466px;
+  }
+</style>
+
+
 
 <div class="home content">
 
+    
   <section class="hero row">
     <div class="col">
       <div class="use_your_words">
         <div class="pill">Vota is in beta!</div>
-        <h1>Everyone Gets a Card.</h1>
-        <p class="tag">
-          Introducing a new kind of Visa card you can give to everyone at your company, from the CEO to the intern.
-        </p>
-        <div class="form_wrapper">
-          <p class="get_it">Get the Vota app:</p>
+        <h1>The Smartest Card</h1>
+        <p class="tag">Introducing a Visa Card that does everything for you: it collects the data, fills in the blanks, and gets expense reports done, filed, and closed.</p>
+        <div class="form_wrapper" id="getIt">
+          <p class="get_it">Get Vota in Minutes on iPhone & Android:</p>
           <form onsubmit="sendSMS(this); return false;">
             <span class="input_wrapper">
               <input type="tel" id="phone" name="phone" tabindex=1>
@@ -37,92 +56,120 @@ layout: layout
     </div>
     <div class="col">
       <div class="illus_hero">
-        <img src="/images/illus_cards.svg" alt="" />
+        <img src="/images/illus_hero.svg" alt="" />
       </div>
-    </div>
-  </section>
-
-  <section class="feature control row">
-    <div class="description col">
-      <h3>Be Your Own Bank</h3>
-      <p class="small">
-        Vota puts you in complete control of your company's spending. 
-        <br/><br/>
-        Issue cards to employees, set spending limits, or deactivate them with a single tap.
-      </p>
-    </div>
-    <div class="shot col">
-      <img src="/images/illus_control.svg" alt="" />
-    </div>
-  </section>
-  
-  <section class="feature expense row reverse">
-    <div class="shot col">
-      <img src="/images/illus_hero.svg" alt="" />
-    </div>
-    <div class="description col">
-      <h3>The End of Expense Reports</h3>
-      <p class="small">
-        Vota fills in the blanks and alerts all interested parties in real time. Never create or approve another expense report.
-      </p>
     </div>
   </section>
   
   <section class="feature easy row">
-    <div class="description col">
-      <h3>We make it easy</h3>
-      <p class="small">Vota tells users what they need to capture in real-time so your team never has to dig around for receipts.</p>
-    </div>
-    <div class="shot col">
+    <div class="shot col" >
       <div class="iphone_frame">
-        <img src="/images/screenshot_easy.svg" alt="" />
+        <img src="/images/screenshots/home.png" alt="" />
       </div>
+    </div>
+    <div class="description col" id="openAccount">
+        <h3>Open your account in minutes</h3>
+        <p class="small">Create a new account by simply telling us a little about your business.</p>
+      </div>
+  </section>
+
+
+  <section class="feature cards row" id="sectionCards">
+      <div class="description col" id="getCards">
+          <h3>Be Your Own Bank</h3>
+          <p class="small">Issue cards to every employee from the intern on up, then set spending limits, deactivate cards with a single tap, or authorize only a single transaction.<br><br>Because when everyone can have a card, every penny can be tracked.
+          </p>
+        </div>
+        <div class="shot col">
+            <img src="/images/illus_cards.svg" alt="" />
+          </div>
+    </section>
+    <div id="svgContainer">
+        <svg id="svg1" width="0" height="0" >
+            <path
+                id="pathOpen"
+                d="M0 0"         
+                stroke="url(#paint0_linear)"
+                fill="none" 
+                stroke-width="12px";/>
+                <path
+                id="pathCards"
+                d="M0 0"         
+                stroke="url(#paint0_linear)"
+                fill="none" 
+                stroke-width="12px";/>
+                <path
+                id="pathDone"
+                d="M0 0"         
+                stroke="url(#paint0_linear)"
+                fill="none" 
+                stroke-width="12px";/>
+                <path
+                id="pathNotif"
+                d="M0 0"         
+                stroke="url(#paint0_linear)"
+                fill="none" 
+                stroke-width="12px";/>
+                <path
+                id="pathQb"
+                d="M0 0"         
+                stroke="url(#paint0_linear)"
+                fill="none" 
+                stroke-width="12px";/>
+            <defs>
+              <linearGradient id="paint0_linear" x1="41.5" y1="4" x2="41.5" y2="327.5" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#16B4BD"/>
+                <stop offset="1" stop-color="#32BB94"/>
+            </defs>
+        </svg>
+    </div>
+  <section class="feature easy row">  
+    
+    <div class="shot col">
+        <div class="iphone_frame">
+          <img src="/images/screenshot_easy.svg" alt="" />
+        </div>
+      </div>
+      <div class="description col" id="beDone">
+          <h3>Be Done</h3>
+          <p class="small">We tell you what to capture in real-time so once the transaction happens, the expense report is done.</p>
+        </div>
+  </section>
+
+  <section id="takeControl" class="feature quickbooks row">
+    <div class="shot col padded">
+      <div style="align-content: center">
+        <div id="notifMan">
+          <img src="/images/illus_control_1.svg" alt=""/>
+        </div>
+        <div id="notif">
+          <img src="/images/illus_control_2.svg" alt=""/>
+        </div> 
+      </div>
+    </div>
+    <div class="description col">
+      <div>
+        <div id="qb">   
+            <img src="/images/illus_books1.svg" alt=""/>    
+          </div> 
+        </div> 
+    </div>
+    <div class="footer">
+        <h3>Transactions are filed instantly</h3>
+        <p class="small">Managers, Admins, and even Quickbooks are updated instantly with no manual data entry!<br><br>Like we said, the expense report is done!</p>
     </div>
   </section>
 
-  <!-- <section class="feature control reverse row">
-    <div class="shot col">
-      <img src="/images/illus_control.svg" alt="" />
-    </div>
-    <div class="description col">
-      <h3>You take control</h3>
-      <p class="small">Anyone who needs to know is alerted in real-time. Limits can be tweaked on the fly, eliminating fraud and out-of-compliance transactions.</p>
-    </div>
-  </section> -->
 
-  <!-- <section class="feature cards row">
-    <div class="description col">
-      <h3>Everyone can have a card</h3>
-      <p class="small">A simple swipe activates and deactivates cards with rules for where they can be used and for how much.<BR><BR> Now EVERYONE can have their OWN card.</p>
-    </div>
-    <div class="shot col">
-      <img src="/images/illus_cards.svg" alt="" />
-    </div>
-  </section> -->
-
-  <!-- <section class="feature transactions reverse row">
+  <section class="feature easy reverse row">
     <div class="shot col">
       <div class="iphone_frame">
-        <img src="/images/screenshot_transaction.jpg" alt="" />
+        <img src="/images/screenshots/place.png" alt="" />
       </div>
     </div>
-    <div class="description col">
+    <div class="description col" id="intelligent">
       <h3>Intelligent transactions</h3>
-      <p class="small">See the actual places and websites your employees are spending money at, like "Tabor Tavern" instead of "SQ *TT PDX".</p>
-    </div>
-  </section> -->
-
-  <section class="feature quickbooks row reverse">
-    <div class="shot col">
-      <img src="/images/illus_books.svg" alt="" />
-    </div>
-    <div class="description col">
-      <h3>Swipe directly to QuickBooks</h3>
-      <p class="small">
-        Every transaction appears in QuickBooks instantly. No more copy and paste.
-        <br/><br/>
-        Or, export to Excel and CSV for other accounting packages, if that's your jam.
-      </p>
+      <p class="small">See the actual places and websites you spend money at, like "Whole Foods Hollywood" instead of "WHLFDS ST 102".</p>
     </div>
   </section>
 
@@ -133,11 +180,16 @@ layout: layout
       <p class="small">You spend what you have and we don't charge you onerous fees.</p>
     </div>
     <div class="shot col">
-      <img src="/images/illus_free.svg" alt="" />
+      <div id="imagesequence">
+        <img id="confetti" src="/images/confetti/illus_conf_1.svg"><br>
+      </div>
+      <div>
+        <img id="illusFree" src="/images/confetti/illus_free.svg" alt="" />
+      </div>
     </div>
   </section>
 
-  <!-- <section class="feature rewards reverse row">
+  <section class="feature rewards reverse row">
     <div class="shot col">
       <figure>
         <img src="/images/logos/amazon_logo.svg" alt="" />
@@ -160,17 +212,14 @@ layout: layout
       <h3>Rewards</h3>
       <p class="small">Traditional “rewards” cards give you 1% here or there. We partnered directly with merchants to maximize rewards! Simply open Vota, activate your rewards, and shop online.</p>
       <p class="small">Earn up to 8% at IHG hotels, or 10% back on Amazon purchases!</p>
+      <p class="disclosure">Rewards program in beta, subject to change; invite only.</p>
     </div>
-  </section> -->
+  </section>
 
   <section class="feature secure row">
     <div class="description col">
-      <h3>Liability Coverage</h3>
-      <p class="small">
-        You'll notice accidental and fraudulent charges in seconds,  thanks to our real-time notifications.
-        <br/><br/>
-        Need to dispute a charge? Our team is standing by to assist.
-      </p>
+      <h3>Liablity Coverage</h3>
+      <p class="small">With real time notifications, the Vota Card is the most secure ever available; but if something bad does happen, we have you covered.</p>
       <img src="/images/illus_security.svg" alt="" />
     </div>
     <footer class="footer_stacked">
