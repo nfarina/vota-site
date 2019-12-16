@@ -205,6 +205,39 @@ function tweenLines() {
                               .setTween(tweenConfetti)
                               .addTo(controller);
 
+                                          
+  // dashboard scene:
+  // define images
+  var dashImages = [
+    "/images/screenshots/dashboard/1.gif",
+    "/images/screenshots/dashboard/2.gif",
+    "/images/screenshots/dashboard/3.gif",
+    "/images/screenshots/dashboard/4.gif",
+    "/images/screenshots/dashboard/5.gif",
+    "/images/screenshots/dashboard/6.gif",
+    "/images/screenshots/dashboard/7.gif",
+  ];
+
+  // TweenMax can tween any property of any object. We use this object to cycle through the array
+  var dashObj = {curImg: 0};
+
+  // create tween
+  var tweenDashboard = TweenMax.to(dashObj, 1,
+    {
+      curImg: dashImages.length + 1,	// animate propery curImg to number of images
+      roundProps: "curImg",				// only integers so it can be used as an array index
+      repeat: 0,									// repeat 3 times
+      immediateRender: true,			// load first image automatically
+      ease: Linear.easeNone,			// show every image the same ammount of time
+      onUpdate: function () {
+        $("#dashboard").attr("src", dashImages[dashObj.curImg]); // set the image source
+      }
+    }
+  );
+
+    var dashScene = new ScrollMagic.Scene({triggerElement: "#dashboard", duration: 600})
+                              .setTween(tweenDashboard)
+                              .addTo(controller);
 }
 
 
