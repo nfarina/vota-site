@@ -92,3 +92,27 @@ button {
   outline: none;
   cursor: pointer;
 }
+
+.button {
+  background: $grad1;
+  border-radius: 6px;
+  color: #fff;
+  font-family: $font1;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+  padding: 17px 30px;
+  transition: all 200ms ease;
+
+  &:hover, &:focus {
+    background: $grad1_rev;
+    box-shadow: 0 3px 12px rgba($color1, 0.4);
+    opacity: 1;
+  }
+
+  &:active {
+    box-shadow: 0 5px 15px rgba($color1, 0.4);
+    opacity: 1;
+  }
+
+}
