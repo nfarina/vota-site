@@ -260,9 +260,10 @@
     .padded {
       margin-top: 20px;
       margin-left: 10px;
-  }
-  &.easy {
-    background: $color4;
+    }
+    
+    &.easy {
+      background: $color4;
 
     .description {
       @include bp(baby-bear) {
