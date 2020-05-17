@@ -17,7 +17,7 @@
     }
 
     &:before {
-      background: linear-gradient(135deg, rgba(darken($color12, 15%), 0.80) 0%, rgba(darken($color12, 15%), 0.40) 100%);
+      background: linear-gradient(135deg, rgba(darken($color12, 15%), 0.80) 0%, rgba(darken($color12, 10%), 0.05) 100%);
       content: '';
       height: 100%;
       left: 0;
@@ -31,7 +31,7 @@
     .use_your_words {
       display: block;
       margin: 6.25rem auto 12.5rem;
-      max-width: 550px;
+      max-width: 590px;
       padding: 0 1.25rem;
       position: relative;
       @include bp(baby-bear) {
@@ -59,7 +59,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
-    padding-bottom: 6.25rem;
+    padding-bottom: 4.25rem;
     position: relative;
     @include bp(papa-bear) {
       margin: 0 -1.25rem;
@@ -117,6 +117,45 @@
       img {
         margin-left: auto;
         margin-right: auto;
+      }
+
+    }
+
+    .video{
+      background: #fff;
+      box-shadow: 0 10px 40px rgba($color12, 0.1);
+      line-height: 0;
+      margin: 3.125rem auto 0;
+      max-width: 550px;
+      overflow: hidden;
+      position: relative;
+      @include bp(baby-bear) {
+        margin-top: 0;
+      }
+
+      span {
+        border-radius: 3px;
+        display: block;
+        height: 6px;
+        position: absolute;
+        top: 15px;
+        width: 6px;
+
+        &:first-of-type {
+          background: $color6;
+          left: 15px;
+        }
+
+        &:nth-of-type(2) {
+          background: $color3;
+          left: 25px;
+        }
+
+        &:nth-of-type(3) {
+          background: $color2;
+          left: 35px;
+        }
+
       }
 
     }
@@ -190,7 +229,6 @@
       }
 
       .shot {
-        align-self: start;
         @include bp(papa-bear) {
           padding-right: 1.25rem;
         }
@@ -218,9 +256,9 @@
     }
 
     &.limits {
-
+      padding-top: 1.25rem;
       .description {
-        margin: 12.5rem auto 6.25rem;
+        margin: 7.5rem auto 6.25rem;
         @include bp(baby-bear) {
           margin: 6.25rem auto 3.75rem;
         }
@@ -239,10 +277,29 @@
     }
 
   }
+  .quote {
+    background: $color16;
+    padding: 12.5rem 0;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    @include bp(papa-bear) {
+      margin: 0 -1.25rem;
+    }
+    @include bp(baby-bear) {
+      padding: 6.25rem 0;
+    }
+    .quoteText {
+      font-style: italic;
+      padding: 0 2.25rem;
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+  }
 
   .cta {
     background: $color12;
-    padding: 12.5rem 0;
+    padding: 8.5rem 0;
     text-align: center;
     @include bp(papa-bear) {
       margin: 0 -1.25rem;
@@ -250,12 +307,10 @@
     @include bp(baby-bear) {
       padding: 6.25rem 0;
     }
-
     .button {
       display: inline-block;
       margin: 0 auto;
     }
-
   }
 
   .footer_inline {
