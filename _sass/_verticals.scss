@@ -30,7 +30,7 @@
 
     .use_your_words {
       display: block;
-      margin: 6.25rem auto 12.5rem;
+      margin: 6.25rem auto 8.5rem;
       max-width: 590px;
       padding: 0 1.25rem;
       position: relative;
@@ -298,14 +298,38 @@
   }
 
   .cta {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    position: relative;
+    font-style: italic;
+    line-height: 1.2;
+    color: white;
     background: $color12;
-    padding: 8.5rem 0;
-    text-align: center;
+    padding: 4.5rem 0;
+    
     @include bp(papa-bear) {
       margin: 0 -1.25rem;
     }
     @include bp(baby-bear) {
-      padding: 6.25rem 0;
+      grid-template-columns: 1fr;
+      padding: 4.25rem 0;
+    }
+    .description{
+      .quoteText {
+        padding: 0 6.25rem;
+        font-size: 1.5rem;
+        text-align: left;
+      }
+    }
+    .requestInfo {
+      font-size: 1.25rem;
+      text-align: center;
+      padding: 6rem 6.25rem;
+      .requestTxt {
+        padding-bottom: 3.25rem;
+      }
     }
     .button {
       display: inline-block;
