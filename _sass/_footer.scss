@@ -9,11 +9,11 @@
 
   nav {
     margin: 0 auto 2.5rem;
-    width: 50%;
+    width: 70%;
 
     a, p {
       display: inline-block;
-      @include bp(baby-bear) {
+      @include bp(mama-bear) {
         display: block;
         padding: 1.25rem 0;
       }
@@ -21,7 +21,7 @@
 
     a {
       font-weight: normal;
-      @include bp(baby-bear) {
+      @include bp(mama-bear) {
         border-bottom: 1px solid $color15;
       }
     }
@@ -32,7 +32,7 @@
 
     span {
       display: inline-block;
-      @include bp(baby-bear) {
+      @include bp(mama-bear) {
         display: none;
       }
     }

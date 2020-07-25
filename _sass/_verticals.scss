@@ -1,0 +1,345 @@
+.vertical {
+  overflow: hidden;
+
+  .hero.row {
+    align-items: center;
+    background: url('/images/hero_bg_truckers.jpg') 50% 50% no-repeat;
+    background-size: cover;
+    color: #FFF;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    margin-left: -1.25rem;
+    position: relative;
+    width: calc(100% + 2.5rem);
+    @include bp(baby-bear) {
+      grid-template-columns: 1fr;
+    }
+
+    &:before {
+      background: linear-gradient(135deg, rgba(darken($color12, 15%), 0.80) 0%, rgba(darken($color12, 10%), 0.05) 100%);
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      @include bp(baby-bear) {
+        background: rgba(darken($color12, 15%), 0.80);
+      }
+    }
+
+    .use_your_words {
+      display: block;
+      margin: 6.25rem auto 8.5rem;
+      max-width: 590px;
+      padding: 0 1.25rem;
+      position: relative;
+      @include bp(baby-bear) {
+        margin: 6.25rem auto;
+      }
+
+      h1 {
+        margin-bottom: 1.25rem;
+      }
+
+      .tag {
+        margin-bottom: 2.5rem;
+      }
+
+      .button {
+        display: inline-block;
+      }
+
+    }
+
+  }
+
+  .feature.row {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding-bottom: 4.25rem;
+    position: relative;
+    @include bp(papa-bear) {
+      margin: 0 -1.25rem;
+    }
+    @include bp(baby-bear) {
+      grid-template-columns: 1fr;
+    }
+
+    &.reverse {
+
+      .description {
+        @include bp(baby-bear) {
+          order: 0;
+        }
+
+        h3 {
+          margin-bottom: 1.25rem;
+        }
+
+      }
+
+      .shot {
+        @include bp(baby-bear) {
+          order: 1;
+        }
+      }
+
+    }
+
+    .description {
+      margin: 0 auto;
+      text-align: center;
+      width: 50%;
+      @include bp(mama-bear) {
+        width: 70%;
+      }
+      @include bp(baby-bear) {
+        margin: 6.25rem auto 3.75rem;
+        padding: 0 1.25rem;
+        width: 100%;
+      }
+
+      h3 {
+        margin-bottom: 1.25rem;
+      }
+
+      p:not(:first-of-type) {
+        margin-top: 1.25rem;
+      }
+
+    }
+
+    .shot {
+
+      img {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+    }
+
+    .video{
+      background: #fff;
+      box-shadow: 0 10px 40px rgba($color12, 0.1);
+      line-height: 0;
+      margin: 3.125rem auto 0;
+      max-width: 550px;
+      overflow: hidden;
+      position: relative;
+      @include bp(baby-bear) {
+        margin-top: 0;
+      }
+
+      span {
+        border-radius: 3px;
+        display: block;
+        height: 6px;
+        position: absolute;
+        top: 15px;
+        width: 6px;
+
+        &:first-of-type {
+          background: $color6;
+          left: 15px;
+        }
+
+        &:nth-of-type(2) {
+          background: $color3;
+          left: 25px;
+        }
+
+        &:nth-of-type(3) {
+          background: $color2;
+          left: 35px;
+        }
+
+      }
+
+    }
+
+    .browser {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba($color12, 0.1);
+      line-height: 0;
+      margin: -3.125rem auto 0;
+      max-width: 550px;
+      overflow: hidden;
+      padding: 36px 0 0;
+      position: relative;
+      @include bp(baby-bear) {
+        margin-top: 0;
+      }
+
+      span {
+        border-radius: 3px;
+        display: block;
+        height: 6px;
+        position: absolute;
+        top: 15px;
+        width: 6px;
+
+        &:first-of-type {
+          background: $color6;
+          left: 15px;
+        }
+
+        &:nth-of-type(2) {
+          background: $color3;
+          left: 25px;
+        }
+
+        &:nth-of-type(3) {
+          background: $color2;
+          left: 35px;
+        }
+
+      }
+
+    }
+
+    &.cards {
+      margin-top: -3.125rem;
+      @include bp(baby-bear) {
+        margin-top: 0;
+      }
+
+      .shot {
+          align-self: start;
+      }
+
+    }
+
+    &.bookkeeping {
+      background: $color16;
+
+      .description {
+        margin: 12.5rem auto 6.25rem;
+        @include bp(baby-bear) {
+          margin: 6.25rem auto 3.75rem;
+        }
+
+        p {
+          margin-bottom: 0.625rem;
+        }
+
+      }
+
+      .shot {
+        @include bp(papa-bear) {
+          padding-right: 1.25rem;
+        }
+        @include bp(baby-bear) {
+          padding: 0 1.25rem;
+        }
+      }
+
+    }
+
+    &.automate, &.affordable {
+      padding: 12.5rem 0;
+      @include bp(baby-bear) {
+        padding: 0 0 6.25rem;
+      }
+
+      .shot {
+        padding: 0 1.25rem;
+      }
+
+    }
+
+    &.affordable {
+      background: $color4;
+    }
+
+    &.limits {
+      padding-top: 1.25rem;
+      .description {
+        margin: 7.5rem auto 6.25rem;
+        @include bp(baby-bear) {
+          margin: 6.25rem auto 3.75rem;
+        }
+      }
+
+      .shot {
+        align-self: start;
+        @include bp(papa-bear) {
+          padding-left: 1.25rem;
+        }
+        @include bp(baby-bear) {
+          padding: 0 1.25rem;
+        }
+      }
+
+    }
+
+  }
+  .quote {
+    background: $color16;
+    padding: 12.5rem 0;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    @include bp(papa-bear) {
+      margin: 0 -1.25rem;
+    }
+    @include bp(baby-bear) {
+      padding: 6.25rem 0;
+    }
+    .quoteText {
+      font-style: italic;
+      padding: 0 2.25rem;
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+  }
+
+  .cta {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    position: relative;
+    font-style: italic;
+    line-height: 1.2;
+    color: white;
+    background: $color12;
+    padding: 4.5rem 0;
+    
+    @include bp(papa-bear) {
+      margin: 0 -1.25rem;
+    }
+    @include bp(baby-bear) {
+      grid-template-columns: 1fr;
+      padding: 4.25rem 0;
+    }
+    .description{
+      .quoteText {
+        padding: 0 6.25rem;
+        font-size: 1.5rem;
+        text-align: left;
+      }
+    }
+    .requestInfo {
+      font-size: 1.25rem;
+      text-align: center;
+      padding: 6rem 6.25rem;
+      .requestTxt {
+        padding-bottom: 3.25rem;
+      }
+    }
+    .button {
+      display: inline-block;
+      margin: 0 auto;
+    }
+  }
+
+  .footer_inline {
+    margin: 0;
+    padding: 6.25rem 0;
+  }
+
+}

@@ -260,9 +260,10 @@
     .padded {
       margin-top: 20px;
       margin-left: 10px;
-  }
-  &.easy {
-    background: $color4;
+    }
+    
+    &.easy {
+      background: $color4;
 
     .description {
       @include bp(baby-bear) {
@@ -300,7 +301,7 @@
       }
       .description {
         padding-left: -10px;
-        text-align: center;       
+        text-align: center;
       }
     }
 
@@ -394,10 +395,10 @@
       }
       .description {
         padding-left: -10px;
-        text-align: center;       
+        text-align: center;
       }
     }
-  
+
     &.secure {
 
       .description {
@@ -435,7 +436,7 @@
       }
     }
     &.data {
-      background:$color16;  
+      background:$color16;
         .shot {
           align-self: end;
           bottom: -5.875rem;
@@ -447,7 +448,7 @@
         .description {
           margin: 7.5rem auto;
         }
-  
+
     }
 
     .description {
@@ -594,7 +595,7 @@
   transform: rotate(-5deg);
   filter: drop-shadow(5px 5px 10px black);
   display: block;
-  
+
 }
 
 
